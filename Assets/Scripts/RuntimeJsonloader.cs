@@ -90,7 +90,7 @@ namespace doppelganger
             {
                 string filenameWithoutExtension = Path.GetFileNameWithoutExtension(filename);
 
-                if (!filenameWithoutExtension.Contains("_fpp") && !filenameWithoutExtension.StartsWith("db_"))
+                if (!filenameWithoutExtension.StartsWith("db_"))
                 {
                     dropdownOptions.Add(filenameWithoutExtension);
                     displayNameToFileMap[filenameWithoutExtension] = filename;  // Map the display name to the full file name

@@ -34,11 +34,6 @@ public class ModelImportExport : EditorWindow
         {
             ImportMaterials();
         }
-
-        if (GUILayout.Button("Assign Textures to Existing Materials"))
-        {
-            AssignTexturesToExistingMaterials();
-        }
     }
 
     private void ExportMaterials()
@@ -139,7 +134,52 @@ public class ModelImportExport : EditorWindow
                 }
             }
 
-            ApplyPropertiesToMaterial(material, materialProperties);
+            foreach (var property in materialProperties)
+            {
+                if (property.Key == "Shader") continue;
+
+                if (material.HasProperty(property.Key))
+                {
+                    switch (property.Value.Type)
+                    {
+                        case JTokenType.String:
+                            if (property.Value.ToString().EndsWith(".png") || property.Value.ToString().EndsWith(".jpg"))
+                            {
+                                Texture texture = AssetDatabase.LoadAssetAtPath<Texture>(property.Value.ToString());
+                                if (texture != null)
+                                {
+                                    material.SetTexture(property.Key, texture);
+                                }
+                            }
+                            break;
+                        case JTokenType.Float:
+                            material.SetFloat(property.Key, property.Value.ToObject<float>());
+                            break;
+                        case JTokenType.Object:
+                            if (property.Value["r"] != null)
+                            {
+                                Color color = new Color(
+                                    property.Value["r"].Value<float>(),
+                                    property.Value["g"].Value<float>(),
+                                    property.Value["b"].Value<float>(),
+                                    property.Value["a"].Value<float>()
+                                );
+                                material.SetColor(property.Key, color);
+                            }
+                            else if (property.Value["x"] != null)
+                            {
+                                Vector4 vector = new Vector4(
+                                    property.Value["x"].Value<float>(),
+                                    property.Value["y"].Value<float>(),
+                                    property.Value["z"].Value<float>(),
+                                    property.Value["w"].Value<float>()
+                                );
+                                material.SetVector(property.Key, vector);
+                            }
+                            break;
+                    }
+                }
+            }
 
             EditorUtility.SetDirty(material);
         }
@@ -147,90 +187,5 @@ public class ModelImportExport : EditorWindow
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
         Debug.Log($"Imported materials from {importPath}");
-    }
-
-    private void AssignTexturesToExistingMaterials()
-    {
-        string jsonInput = File.ReadAllText(importPath);
-        Dictionary<string, JObject> materialData = JsonConvert.DeserializeObject<Dictionary<string, JObject>>(jsonInput);
-
-        foreach (var materialEntry in materialData)
-        {
-            string materialName = materialEntry.Key;
-            JObject materialProperties = materialEntry.Value;
-
-            string materialFilePath = Path.Combine(materialPath, materialName + ".mat");
-            Material material = AssetDatabase.LoadAssetAtPath<Material>(materialFilePath);
-
-            if (material != null)
-            {
-                ApplyPropertiesToMaterial(material, materialProperties);
-                EditorUtility.SetDirty(material);
-            }
-            else
-            {
-                Debug.LogWarning($"Material {materialName} not found. Skipping texture assignment.");
-            }
-        }
-
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
-        Debug.Log("Assigned textures to existing materials");
-    }
-
-    private void ApplyPropertiesToMaterial(Material material, JObject materialProperties)
-    {
-        foreach (var property in materialProperties)
-        {
-            if (property.Key == "Shader") continue;
-
-            if (material.HasProperty(property.Key))
-            {
-                switch (property.Value.Type)
-                {
-                    case JTokenType.String:
-                        string propertyValue = property.Value.ToString();
-                        if (propertyValue.EndsWith(".png") || propertyValue.EndsWith(".jpg") || propertyValue.EndsWith(".jpeg"))
-                        {
-                            propertyValue = propertyValue.Replace(".png", ".jpg");
-                            Texture texture = AssetDatabase.LoadAssetAtPath<Texture>(propertyValue);
-                            if (texture != null)
-                            {
-                                material.SetTexture(property.Key, texture);
-                            }
-                            else
-                            {
-                                Debug.LogWarning($"Texture not found: {propertyValue}");
-                            }
-                        }
-                        break;
-                    case JTokenType.Float:
-                        material.SetFloat(property.Key, property.Value.ToObject<float>());
-                        break;
-                    case JTokenType.Object:
-                        if (property.Value["r"] != null)
-                        {
-                            Color color = new Color(
-                                property.Value["r"].Value<float>(),
-                                property.Value["g"].Value<float>(),
-                                property.Value["b"].Value<float>(),
-                                property.Value["a"].Value<float>()
-                            );
-                            material.SetColor(property.Key, color);
-                        }
-                        else if (property.Value["x"] != null)
-                        {
-                            Vector4 vector = new Vector4(
-                                property.Value["x"].Value<float>(),
-                                property.Value["y"].Value<float>(),
-                                property.Value["z"].Value<float>(),
-                                property.Value["w"].Value<float>()
-                            );
-                            material.SetVector(property.Key, vector);
-                        }
-                        break;
-                }
-            }
-        }
     }
 }

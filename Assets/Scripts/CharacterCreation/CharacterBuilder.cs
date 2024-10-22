@@ -505,7 +505,8 @@ namespace doppelganger
                 }
                 Destroy(currentModel);
                 currentlyLoadedModels.Remove(slotName);
-                
+                interfaceManager.UpdatePersistentSlotToModelMap(slotName, null);
+
                 Transform existingVariationSlider = interfaceManager.slidersPanel.transform.Find(slotName + "Slider" + "_VariationSlider" + "_" + modelName);
                 if (existingVariationSlider != null)
                 {
@@ -545,6 +546,22 @@ namespace doppelganger
                 {
                     path = Path.Combine(path, classSelection);
                 }
+            }
+
+            if (modelInstance != null)
+            {
+                if (currentlyLoadedModels.ContainsKey(slotName))
+                {
+                    currentlyLoadedModels[slotName] = modelInstance;
+                }
+                else
+                {
+                    currentlyLoadedModels.Add(slotName, modelInstance);
+                }
+
+                // Update the sliderToLoadedModelMap in the InterfaceManager
+                interfaceManager.UpdateSliderLoadedModel(slotName, modelInstance);
+                interfaceManager.UpdatePersistentSlotToModelMap(slotName, modelInstance);
             }
 
             string slotJsonFilePath = Path.Combine(path, slotName + ".json");

@@ -60,7 +60,10 @@ namespace doppelganger
             // Load the model data from JSON input
             string jsonInput = File.ReadAllText(jsonInputPath);
             ModelData modelData = JsonUtility.FromJson<ModelData>(jsonInput);
-
+            if (!modelData.skeletonName.EndsWith(".msh"))
+            {
+                modelData.skeletonName += ".msh";
+            }
 
             List<int> existingSlotUids = modelData.slotPairs.Select(sp => sp.slotData.slotUid).ToList();
 
