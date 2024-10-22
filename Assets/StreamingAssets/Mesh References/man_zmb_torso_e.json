@@ -1,0 +1,327 @@
+{
+  "materialsData": [
+    {
+      "number": 1,
+      "name": "man_zmb_torso_b.mat"
+    },
+    {
+      "number": 2,
+      "name": "man_zmb_torso_b_clp.mat"
+    },
+    {
+      "number": 3,
+      "name": "man_zmb_torso_skin.mat"
+    }
+  ],
+  "variations": [
+    {
+      "id": "1",
+      "materialsData": [
+        {
+          "number": 1,
+          "name": "man_zmb_torso_b.mat"
+        },
+        {
+          "number": 2,
+          "name": "man_zmb_torso_b_clp.mat"
+        },
+        {
+          "number": 3,
+          "name": "man_zmb_body_torso_a.mat"
+        }
+      ],
+      "materialsResources": [
+        {
+          "number": 1,
+          "resources": [
+            {
+              "name": "man_zmb_torso_b.mat",
+              "selected": true,
+              "layoutId": 4,
+              "loadFlags": "S",
+              "rttiValues": [
+                {
+                  "name": "grd_tex",
+                  "type": 7,
+                  "val_str": "man_zmb_deg_torso_b_grd.dds"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "resources": [
+            {
+              "name": "man_zmb_torso_b_clp.mat",
+              "selected": true,
+              "layoutId": 4,
+              "loadFlags": "S",
+              "rttiValues": [
+                {
+                  "name": "grd_tex",
+                  "type": 7,
+                  "val_str": "man_zmb_deg_torso_b_grd.dds"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "resources": [
+            {
+              "name": "man_zmb_body_torso_a_degenerated.mat",
+              "selected": true,
+              "layoutId": 4,
+              "loadFlags": "S",
+              "rttiValues": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "materialsData": [
+        {
+          "number": 1,
+          "name": "man_zmb_torso_b.mat"
+        },
+        {
+          "number": 2,
+          "name": "man_zmb_torso_b_clp.mat"
+        },
+        {
+          "number": 3,
+          "name": "man_zmb_body_torso_a.mat"
+        }
+      ],
+      "materialsResources": [
+        {
+          "number": 1,
+          "resources": [
+            {
+              "name": "man_zmb_torso_b.mat",
+              "selected": true,
+              "layoutId": 4,
+              "loadFlags": "S",
+              "rttiValues": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "resources": [
+            {
+              "name": "man_zmb_torso_b_clp.mat",
+              "selected": true,
+              "layoutId": 4,
+              "loadFlags": "S",
+              "rttiValues": []
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "resources": [
+            {
+              "name": "man_zmb_body_torso_a_degenerated.mat",
+              "selected": true,
+              "layoutId": 4,
+              "loadFlags": "S",
+              "rttiValues": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "materialsData": [
+        {
+          "number": 1,
+          "name": "man_zmb_torso_b.mat"
+        },
+        {
+          "number": 2,
+          "name": "man_zmb_torso_b_clp.mat"
+        },
+        {
+          "number": 3,
+          "name": "man_zmb_body_torso_a.mat"
+        }
+      ],
+      "materialsResources": [
+        {
+          "number": 1,
+          "resources": [
+            {
+              "name": "man_zmb_torso_b.mat",
+              "selected": true,
+              "layoutId": 4,
+              "loadFlags": "S",
+              "rttiValues": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "resources": [
+            {
+              "name": "man_zmb_torso_b_clp.mat",
+              "selected": true,
+              "layoutId": 4,
+              "loadFlags": "S",
+              "rttiValues": []
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "resources": [
+            {
+              "name": "man_zmb_body_torso_a_degenerated_african.mat",
+              "selected": true,
+              "layoutId": 4,
+              "loadFlags": "S",
+              "rttiValues": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "materialsData": [
+        {
+          "number": 1,
+          "name": "man_zmb_torso_b.mat"
+        },
+        {
+          "number": 2,
+          "name": "man_zmb_torso_b_clp.mat"
+        },
+        {
+          "number": 3,
+          "name": "man_zmb_body_torso_a.mat"
+        }
+      ],
+      "materialsResources": [
+        {
+          "number": 1,
+          "resources": [
+            {
+              "name": "man_zmb_torso_b.mat",
+              "selected": true,
+              "layoutId": 4,
+              "loadFlags": "S",
+              "rttiValues": [
+                {
+                  "name": "grd_tex",
+                  "type": 7,
+                  "val_str": "man_zmb_torso_b_gre_grd.dds"
+                },
+                {
+                  "name": "grf_dif_tex",
+                  "type": 7,
+                  "val_str": "man_zmb_torso_g_gre_grf.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "resources": [
+            {
+              "name": "man_zmb_torso_b_clp.mat",
+              "selected": true,
+              "layoutId": 4,
+              "loadFlags": "S",
+              "rttiValues": [
+                {
+                  "name": "grd_tex",
+                  "type": 7,
+                  "val_str": "man_zmb_torso_b_gre_grd.dds"
+                },
+                {
+                  "name": "grf_dif_tex",
+                  "type": 7,
+                  "val_str": "man_zmb_torso_g_gre_grf.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "resources": [
+            {
+              "name": "man_zmb_body_torso_a_degenerated.mat",
+              "selected": true,
+              "layoutId": 4,
+              "loadFlags": "S",
+              "rttiValues": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "materialsData": [
+        {
+          "number": 1,
+          "name": "man_zmb_torso_b.mat"
+        },
+        {
+          "number": 2,
+          "name": "man_zmb_torso_b_clp.mat"
+        },
+        {
+          "number": 3,
+          "name": "man_zmb_torso_skin.mat"
+        }
+      ],
+      "materialsResources": [
+        {
+          "number": 1,
+          "resources": [
+            {
+              "name": "man_zmb_torso_b.mat",
+              "selected": true,
+              "layoutId": 4,
+              "loadFlags": "S",
+              "rttiValues": []
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "resources": [
+            {
+              "name": "man_zmb_torso_b_clp.mat",
+              "selected": true,
+              "layoutId": 4,
+              "loadFlags": "S",
+              "rttiValues": []
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "resources": [
+            {
+              "name": "man_zmb_torso_skin_christmas_green.mat",
+              "selected": true,
+              "layoutId": 4,
+              "loadFlags": "S",
+              "rttiValues": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

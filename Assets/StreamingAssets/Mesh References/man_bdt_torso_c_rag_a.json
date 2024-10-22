@@ -1,0 +1,39 @@
+{
+  "materialsData": [
+    {
+      "number": 1,
+      "name": "wmn_srv_torso_d_bottom_a.mat"
+    }
+  ],
+  "variations": [
+    {
+      "id": "1",
+      "materialsData": [
+        {
+          "number": 1,
+          "name": "wmn_srv_torso_d_bottom_a.mat"
+        }
+      ],
+      "materialsResources": [
+        {
+          "number": 1,
+          "resources": [
+            {
+              "name": "wmn_srv_torso_d_bottom_a_pattern_a.mat",
+              "selected": true,
+              "layoutId": 4,
+              "loadFlags": "S",
+              "rttiValues": [
+                {
+                  "name": "det_0_dif_a_tex",
+                  "type": 7,
+                  "val_str": "srf_fabric_nomad_pattern_d_dif.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

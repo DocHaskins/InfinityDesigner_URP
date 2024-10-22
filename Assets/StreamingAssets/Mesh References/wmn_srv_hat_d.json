@@ -1,0 +1,39 @@
+{
+  "materialsData": [
+    {
+      "number": 1,
+      "name": "wmn_srv_hat_d.mat"
+    }
+  ],
+  "variations": [
+    {
+      "id": "1",
+      "materialsData": [
+        {
+          "number": 1,
+          "name": "wmn_srv_hat_d.mat"
+        }
+      ],
+      "materialsResources": [
+        {
+          "number": 1,
+          "resources": [
+            {
+              "name": "wmn_srv_hat_d.mat",
+              "selected": true,
+              "layoutId": 4,
+              "loadFlags": "S",
+              "rttiValues": [
+                {
+                  "name": "grf_dif_tex",
+                  "type": 7,
+                  "val_str": "chr_cloth_delicate_b_grf.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

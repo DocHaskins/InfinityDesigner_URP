@@ -1,0 +1,39 @@
+{
+  "materialsData": [
+    {
+      "number": 1,
+      "name": "chr_decal_logo_yourself_b.mat"
+    }
+  ],
+  "variations": [
+    {
+      "id": "1",
+      "materialsData": [
+        {
+          "number": 1,
+          "name": "chr_decal_logo_yourself_b.mat"
+        }
+      ],
+      "materialsResources": [
+        {
+          "number": 1,
+          "resources": [
+            {
+              "name": "chr_decal_logo_minimum.mat",
+              "selected": true,
+              "layoutId": 4,
+              "loadFlags": "S",
+              "rttiValues": [
+                {
+                  "name": "dif_0_tex",
+                  "type": 7,
+                  "val_str": "chr_bright_pink_dif.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

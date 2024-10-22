@@ -1,0 +1,33 @@
+{
+  "materialsData": [
+    {
+      "number": 1,
+      "name": "npc_man_opera_guard_mask_a.mat"
+    }
+  ],
+  "variations": [
+    {
+      "id": "1",
+      "materialsData": [
+        {
+          "number": 1,
+          "name": "npc_man_opera_guard_mask_a.mat"
+        }
+      ],
+      "materialsResources": [
+        {
+          "number": 1,
+          "resources": [
+            {
+              "name": "npc_man_opera_guard_mask_a_wrestlers_paint_b.mat",
+              "selected": true,
+              "layoutId": 4,
+              "loadFlags": "S",
+              "rttiValues": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
